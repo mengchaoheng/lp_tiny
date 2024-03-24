@@ -28,6 +28,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef LP_TINY_H_INCLUDED
 #define LP_TINY_H_INCLUDED
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdio.h>
 
 // Written by Victor Liu for EE364a @ Stanford
@@ -189,4 +193,7 @@ int lp_tiny_solve_with_feasible_starting_point(
 // do not call it beforehand.
 void lp_tiny_generate(lp_tiny *lp, int n, int m, int feasible, double *x0);
 
+#ifdef __cplusplus
+}
+#endif
 #endif // LP_TINY_H_INCLUDED

@@ -27,7 +27,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #ifndef _LAPACK_DECL_H_
 #define _LAPACK_DECL_H_
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include <stdlib.h>
 
 // These are function prototypes for the LAPACK routines that lp_tiny
@@ -102,5 +104,7 @@ void FCALL(dsyr2k)(const char* uplo, const char* trans,
                    const double* B, const int* ldb,
                    const double* beta,
                    double* C, const int* ldc);
-
+#ifdef __cplusplus
+}
+#endif
 #endif // _LAPACK_DECL_H_

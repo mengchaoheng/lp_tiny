@@ -111,3 +111,57 @@ the final homework of a class on convex optimization, so it is quite a
 textbook implementation. However, if anything goes wrong, the code is so
 simple that you can just go in and modify or tweak things. Lots of iteration
 limits are hard coded. Memory allocation routines can be modified, etc.
+
+
+```sh
+$ gcc -o test_allocation.out lp_tiny.c test_allocation.c -llapack -lblas  
+$ ./test_allocation.out
+```
+
+```sh
+ $ gcc -c lp_tiny.c -o lp_tiny.o -llapack -lblas  
+ $ g++  test_input_alloc.cpp lp_tiny.o -o test_input_alloc.out -llapack -lblas 
+ $ ./test_input_alloc.out 
+ ```
+or add `CMakeLists.txt`, and
+```sh
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+$ ./test_input_alloc
+```
+or add `makefile`, cd to the root and run:
+```sh
+$ make
+```
+
+
+ ## ref:
+ 在C++中调用C语言写的函数需要遵循几个步骤：
+
+1. 在C++代码中声明C语言函数。使用extern "C"告诉编译器这是一个用C语言规则编译的函数。
+
+2. 确保C语言函数所在的头文件在C++代码中被包含。
+
+3. 编译时确保C语言函数的源文件会被编译链接。
+```Console
+ gcc -c my_c_function.c -o my_c_function.o    # 编译C文件为目标文件
+g++ main.cpp my_c_function.o -o my_program  # 链接C++和目标文件
+./my_program                                 # 运行程序
+```
+或者，如果你使用的是CMake作为构建系统，你的CMakeLists.txt可能看起来像这样：
+```Cmake
+cmake_minimum_required(VERSION 3.0)
+project(my_project)
+ 
+add_executable(my_program main.cpp my_c_function.c)
+```
+然后使用cmake进行构建：
+```sh
+mkdir build
+cd build
+cmake ..
+make
+./test_input_alloc
+```
