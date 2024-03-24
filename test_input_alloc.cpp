@@ -6,7 +6,7 @@
 #include <chrono>
 
 int main() {
-    std::ifstream file("../data.csv");
+    std::ifstream file("../../data.csv");
     std::vector<std::vector<double> > data;
     std::string line;
  
@@ -86,7 +86,7 @@ int main() {
     lp.A[62] = 1;
 
     // 打开CSV文件进行写入
-    std::ofstream outFile("../output.csv");
+    std::ofstream outFile("../../output.csv");
     if (!outFile.is_open()) {
         std::cerr << "无法打开文件" << std::endl;
         return 1;
