@@ -12,7 +12,7 @@
 // Uncomment this to produce lots of test files to compare against CVX
 //#define DO_OUTPUT
 
-int main(int argc, char *argv){
+int main(int argc, char *argv[]){
 	int n, m, probno = 0;
 	srand(time(0));
 	for(n = 2; n <= 1024; n *= 2){

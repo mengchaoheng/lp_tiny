@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "lp_tiny.h"
 
-int main(int argc, char *argv){
+int main(int argc, char *argv[]){
 	{ printf("Testing n=2 infeasible\n");
 		// This problem geometrically is equivalent to finding a point in
 		// a null region of the plane; the region is the positive quadrant,
